@@ -5,11 +5,11 @@
 // version du worker, donc les anciens restaient pour toujours. Rien de périmé
 // n'est servi avec un nom fixe : HTML, scripts et styles passent réseau
 // d'abord, seuls les fichiers immuables (images, polices) viennent du cache.
-const CACHE_VERSION = 'iozyplay-v1'
+const CACHE_VERSION = 'iozytest-v1'
 const CACHE_NAME = CACHE_VERSION
 const RUNTIME_CACHE = CACHE_VERSION + '-runtime'
 
-// Le chemin sous lequel l'app est servie ('/' ou '/play/') : celui du script
+// Le chemin sous lequel l'app est servie ('/' ou '/test/') : celui du script
 // lui-même. Tout ce qui suit s'exprime par rapport à lui.
 const BASE = new URL('./', self.location.href).pathname
 
