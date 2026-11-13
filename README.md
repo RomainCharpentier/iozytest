@@ -61,7 +61,7 @@ Files will be generated in the `dist/` folder.
 
 ### Next to IozyCore, under `/test`
 
-The `Dockerfile` builds one container: the Node server serves the built front, the API and Socket.IO under `IOZYTEST_BASE_PATH` (`/test` by default, empty for the root). The CI publishes `ghcr.io/<owner>/iozytest-app` on every push to `main`; the IozyCore Docker stack pulls it and its nginx routes `/test/` to it. To try it alone:
+The `Dockerfile` builds one container: the Node server serves the built front, the API and Socket.IO under `IOZYTEST_BASE_PATH` (`/test` by default, empty for the root). The IozyCore Docker stack builds it from a clone of this repository next to its own, and its nginx routes `/test/` to it. To try it alone:
 
 ```bash
 docker build -t iozytest .

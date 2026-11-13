@@ -10,7 +10,7 @@ Ce qui ne change pas de nom : les clés `localStorage` (`blindtest-settings`, `b
 
 ## Où la charte se branche
 
-- Le kit est le paquet `iozykit`, dépendance git épinglée sur un commit dans `package.json` (`github:RomainCharpentier/IozyKit#<sha>` ; `package-lock.json` dit lequel). Rien n'est copié dans ce dépôt : `node_modules/iozykit/` apporte `css/tokens.css` (généré), `base.css`, `components.css` et `tokens.json`.
+- Le kit est le paquet `iozykit`, épinglé sur un tag dans `package.json` (l'archive HTTPS `IozyKit/archive/refs/tags/vX.Y.Z.tar.gz`, sans git ni clé SSH ; `package-lock.json` en garde l'empreinte). Pour suivre une nouvelle charte : un tag dans IozyKit, puis la nouvelle adresse ici et `npm install`. Rien n'est copié dans ce dépôt : `node_modules/iozykit/` apporte `css/tokens.css` (généré), `base.css`, `components.css` et `tokens.json`.
 - `src/main.tsx` charge les polices (`@fontsource`, graisses listées dans `tokens.json`) puis les trois CSS du kit, avant les styles de l'app.
 - `src/styles/design-tokens.scss` : les noms historiques de l'app (`--accent-primary`, `--bg-secondary`, `--text-secondary`, `--radius-md`…) sont des **alias** des `--iozy-*`. Ne jamais y écrire une couleur de la charte ; seuls quelques dérivés par thème (accent foncé, teintes denses, ombres extrêmes) y restent.
 - `src/styles/shared/DesignSystem.module.scss` (importé sous `ds`) : `ds.btn`, `ds.btnPrimary`, `ds.input`, `ds.card`, `ds.chip`… **composent** les classes du kit (`composes: iozy-btn from global`). L'API des composants ne change pas, la forme vient du kit.
